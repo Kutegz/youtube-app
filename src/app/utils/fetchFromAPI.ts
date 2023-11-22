@@ -2,11 +2,11 @@ import axios from 'axios';
 
 const BASE_URL = 'https://youtube-v31.p.rapidapi.com';
 
-// const apiKey = process.env.REACT_APP_RAPID_KEY;
+const apiKey = import.meta.env.VITE_RAPID_API_KEY;
 
-// if (!apiKey) {
-//   throw new Error('REACT_APP_RAPID_KEY is not defined');
-// }
+if (!apiKey) {
+  throw new Error('REACT_APP_RAPID_KEY is not defined');
+}
 
 const options = {
   url: BASE_URL,
@@ -15,7 +15,7 @@ const options = {
     order: 'date',
   },
   headers: {
-    'X-RapidAPI-Key': '67743bbc5amshf4297390b7f16b6p159094jsn647d012e3731',
+    'X-RapidAPI-Key': apiKey,
     'X-RapidAPI-Host': 'youtube-v31.p.rapidapi.com',
   },
 };
